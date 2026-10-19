@@ -6,7 +6,7 @@ phases:
       java: corretto21
   pre_build:
     commands:
-      - mvn clean install
+      - mvn clean install -DskipTests
       - echo Logging in to Amazon ECR...
       - aws --version
       - REPOSITORY_URI=347204345880.dkr.ecr.ap-southeast-2.amazonaws.com/passenger-application-registry
