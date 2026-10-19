@@ -26,12 +26,7 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file..
-      - printf '[{"name":"passenger-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG> imagedefinitions.json
-      - echo Writing image definitions file..
-      - DOCKER_CONTAINER_NAME=passenger-application-registry
-      - printf '[{"name":"%s","imageUri":"%s"}]' DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG> imagedefinitions.json
-      - echo $DOCKER_CONTAINER_NAME
-      - echo printing imagedefinitions.json
+      - printf '[{"name":"passenger-application-registry","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG> imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
   files:
